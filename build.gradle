@@ -1,0 +1,46 @@
+// AndroidProject-Kotlin version：v13.1
+apply from : 'configs.gradle'
+
+buildscript {
+
+    apply from : 'maven.gradle'
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        addCommonMaven(repositories)
+    }
+
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.10'
+    }
+}
+
+allprojects {
+
+    repositories {
+        addCommonMaven(repositories)
+    }
+
+    tasks.withType(JavaCompile) {
+
+        options.encoding = 'UTF-8'
+    }
+    tasks.withType(Javadoc) {
+
+        options {
+            encoding 'UTF-8'
+            charSet 'UTF-8'
+            links 'http://docs.oracle.com/javase/7/docs/api'
+        }
+    }
+
+
+    setBuildDir(new File(rootDir, "build/${path.replaceAll(':', '/')}"))
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

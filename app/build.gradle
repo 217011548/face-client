@@ -1,0 +1,117 @@
+apply plugin : 'com.android.application'
+apply plugin : 'android-aspectjx'
+apply plugin : 'kotlin-kapt'
+apply from : '../common.gradle'
+
+
+android {
+
+
+    defaultConfig {
+
+        applicationId 'com.tl.face'
+
+        resConfigs 'zh'
+
+        resConfigs 'xxhdpi'
+
+        proguardFiles 'proguard-sdk.pro', 'proguard-app.pro'
+
+        buildConfigField('boolean', 'LOG_ENABLE', '' + LOG_ENABLE + '')
+
+        buildConfigField('String', 'HOST_URL', '"' + HOST_URL + '"')
+    }
+
+
+    signingConfigs {
+        config {
+            storeFile file(StoreFile)
+            storePassword StorePassword
+            keyAlias KeyAlias
+            keyPassword KeyPassword
+        }
+    }
+
+
+    buildTypes {
+
+        debug {
+
+            applicationIdSuffix '.debug'
+
+            debuggable true
+            jniDebuggable true
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            addManifestPlaceholders([
+                    'app_name'    :    'FaceDetection(Debug)'
+            ])
+            ndk {
+                abiFilters 'armeabi-v7a'
+            }
+        }
+
+        release {
+            debuggable true
+            jniDebuggable false
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            addManifestPlaceholders([
+                    'app_name'    :    '@string/app_name'
+            ])
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
+    }
+
+    packagingOptions {
+
+        exclude 'META-INF/*******'
+    }
+
+
+    aspectjx {
+        include android.defaultConfig.applicationId
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = rootProject.getName() + '_v' + variant.versionName + '_' + variant.buildType.name
+            if (variant.buildType.name == buildTypes.release.getName()) {
+                outputFileName += '_' + new Date().format('MMddHHmm')
+            }
+            outputFileName += '.apk'
+        }
+    }
+}
+
+
+dependencies {
+    implementation project(':library:base')
+    implementation project(':library:widget')
+    implementation project(':library:face')
+
+
+    implementation 'com.github.getActivity:XXPermissions:12.3'
+    implementation 'com.github.getActivity:TitleBar:9.2'
+    implementation 'com.github.getActivity:ToastUtils:9.5'
+    implementation 'com.github.getActivity:EasyHttp:10.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.13'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.github.getActivity:GsonFactory:5.2'
+    implementation 'com.github.getActivity:ShapeView:6.0'
+    implementation 'org.aspectj:aspectjrt:1.9.6'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation 'com.airbnb.android:lottie:4.1.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.tencent:mmkv-static:1.2.10'
+    implementation 'com.github.F1ReKing:Android-SerialPort:1.5.1'
+    implementation 'com.guo.android_extend:android-extend:1.0.5'
+}

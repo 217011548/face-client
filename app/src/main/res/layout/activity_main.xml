@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/main_guide_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.17"
+        android:orientation="horizontal"/>
+
+    <com.tl.face.view.FaceCameraView
+        android:id="@+id/face_camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_hello"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:textColor="#00ff00"
+            android:textSize="50sp" />
+    </com.tl.face.view.FaceCameraView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/main_status_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_normal"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/main_temperature_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#00ff00"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/main_guide_line"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/main_screen_saver_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_screen_saver"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

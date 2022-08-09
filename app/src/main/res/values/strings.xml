@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">FaceDetection</string>
+
+    <!-- 通用的 -->
+    <string name="common_loading">Loading...&#8230;</string>
+
+    <string name="common_confirm">confirm</string>
+    <string name="common_cancel">cancel</string>
+
+    <string name="common_crash_hint">App Crashed, Restarting </string>
+
+    <string name="common_network_error">Please check the internet connection</string>
+
+    <string name="common_permission_alert">permission alert</string>
+    <string name="common_permission_fail_1">permission fail，please try again</string>
+    <string name="common_permission_fail_2">permission fail，please manual active</string>
+    <string name="common_permission_fail_3">permission fail，please manual active</string>
+    <string name="common_permission_fail_4">permission fail，please select always allow</string>
+    <string name="common_permission_goto">going to getpermission</string>
+
+    <string name="common_permission_calendar">permission_calendar</string>
+    <string name="common_permission_camera">permission_camera</string>
+    <string name="common_permission_contacts">ermission_contacts</string>
+    <string name="common_permission_location">permission_location</string>
+    <string name="common_permission_location_background">permission_location_background</string>
+    <string name="common_permission_microphone">permission_microphone</string>
+    <string name="common_permission_phone">permission_phone</string>
+    <string name="common_permission_call_log">permission_call_log</string>
+    <string name="common_permission_sensors">permission_sensors</string>
+    <string name="common_permission_activity_recognition">permission_activity_recognition</string>
+    <string name="common_permission_sms">permission_sms</string>
+    <string name="common_permission_storage">ermission_storage</string>
+
+    <string name="common_permission_install">permission_install</string>
+    <string name="common_permission_notification">permission_notification</string>
+    <string name="common_permission_window">permission_window</string>
+    <string name="common_permission_setting">permission_setting</string>
+
+    <string name="common_network_hint">Please check the internet connection</string>
+
+
+
+    <string name="http_token_error">login fail please login again</string>
+    <string name="http_data_explain_error">data error</string>
+    <string name="http_server_out_time">time out</string>
+    <string name="http_network_error">network error</string>
+    <string name="http_response_error">server no response</string>
+    <string name="http_server_error">server connection error </string>
+
+
+    <string name="status_layout_no_data">empty data</string>
+    <string name="status_layout_error_request">request error</string>
+    <string name="status_layout_error_network">internet error</string>
+    <string name="status_layout_retry">try again</string>
+
+
+    <string name="select_min_hint">please select %d </string>
+    <string name="select_max_hint">only select %d </string>
+
+
+</resources>

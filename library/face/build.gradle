@@ -1,0 +1,11 @@
+apply plugin : 'com.android.library'
+apply from : '../../common.gradle'
+
+dependencies {
+    // 基础库（不包任何第三方框架）
+    implementation project(':library:base')
+    api files('libs/arcsoft_face.jar')
+    api files('libs/arcsoft_image_util.jar')
+    api 'androidx.constraintlayout:constraintlayout:2.0.4'
+    api 'com.github.RedApparat.Fotoapparat:fotoapparat:2.7.0'
+}

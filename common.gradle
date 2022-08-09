@@ -1,0 +1,59 @@
+apply plugin: 'kotlin-android'
+
+
+android {
+
+
+    compileSdkVersion 30
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionName '1.0'
+        versionCode 10
+    }
+
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+
+    buildTypes {
+        debug {}
+        release {}
+    }
+
+    lintOptions {
+        disable 'HardcodedText'
+        disable 'ContentDescription'
+    }
+}
+
+afterEvaluate {
+    if (android.defaultConfig.applicationId == null && "umeng" != getName()) {
+        generateReleaseBuildConfig.enabled = false
+        generateDebugBuildConfig.enabled = false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+}

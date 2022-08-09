@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+    <!-- 熊猫色（黑白背景通吃） -->
+    <color name="panda">#FF757575</color>
+
+    <!-- 白色 -->
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 黑色 -->
+    <color name="black">#FF000000</color>
+    <color name="black85">#D9000000</color>
+    <color name="black80">#CC000000</color>
+    <color name="black60">#99000000</color>
+    <color name="black30">#4D000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black5">#0D000000</color>
+
+    <!-- 灰色 -->
+    <!-- 红色 -->
+    <!-- 金色 -->
+    <!-- 黄色 -->
+    <!-- 绿色 -->
+    <!-- 蓝色 -->
+    <!-- 紫色 -->
+    <!-- 粉色 -->
+    <!-- 橙色 -->
+
+</resources>
